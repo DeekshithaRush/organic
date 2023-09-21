@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vendor Registration</title>
+</head>
+<body>
+    <h1>Vendor Registration</h1>
+    <form method="POST" action="{% url 'vendor:register' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Register">
+    </form>
+    <p>Already have an account? <a href="{% url 'vendor:login' %}">Login</a></p>
+</body>
+</html>

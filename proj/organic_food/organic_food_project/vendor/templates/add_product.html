@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Product</title>
+</head>
+<body>
+    <h1>Add a Product</h1>
+    <form method="POST" action="{% url 'vendor:add_product' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        <label for="category">Category:</label>
+        <select name="category">
+            <option value="Fruits">Fruits</option>
+            <option value="Vegetables">Vegetables</option>
+        </select><br>
+        
+        <label for="name">Product Name:</label>
+        <input type="text" name="name" required><br>
+        
+        <label for="price">Price:</label>
+        <input type="number" name="price" step="0.01" required><br>
+        
+        <label for="image">Image:</label>
+        <input type="file" name="image" accept="image/*" required><br>
+        
+        <label for="quantity">Quantity:</label>
+        <input type="number" name="quantity" required><br>
+        
+        <input type="submit" value="Add Product">
+    </form>
+</body>
+</html>
